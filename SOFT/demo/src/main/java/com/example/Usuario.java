@@ -4,8 +4,8 @@ public class Usuario {
 
     private int idUsuario;
     private String nome;
-    private int senha;
     private Image foto;
+    private String senha;
     private String cpf;
     private String telefone;
     private String endereco;
@@ -13,10 +13,10 @@ public class Usuario {
     private String biografia;
 
     public Usuario() {
-        
+
     }
 
-    public Usuario(int idUsuario, String nome, Image foto, int senha, String cpf, String telefone, String endereco, int idade, String biografia) {
+    public Usuario(int idUsuario, String nome, Image foto, String senha, String cpf, String telefone, String endereco, int idade, String biografia) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.foto = foto;
@@ -28,7 +28,7 @@ public class Usuario {
         this.biografia = biografia;
     }
 
-    public void iniciarLogin(int idUsuario, int senha) throws Exception{
+    public void iniciarLogin(int idUsuario, String senha) throws Exception{
         if (this.idUsuario != idUsuario){
             throw new Exception("Id incorreto!");
         }
@@ -54,11 +54,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getSenha() {
+    public String getSenha() {
         return this.senha;
     }
 
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
@@ -109,7 +109,7 @@ public class Usuario {
     public void setBiografia(String biografia) {
         this.biografia = biografia;
     }
-    
+
     @Override
     public String toString() {
         return "{" +

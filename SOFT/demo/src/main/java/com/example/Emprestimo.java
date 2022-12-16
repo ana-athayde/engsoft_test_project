@@ -21,9 +21,9 @@ public class Emprestimo {
     public Emprestimo() {
     }
 
-    public Emprestimo(int idEmprestimo, Usuario concedente, float distanciaMaxima, String endereco, Date dataEmprestimo, Date dataDevolucao, String nomeItem, String descricaoItem, Categoria categoria) {
+    public Emprestimo(int idEmprestimo, Usuario requisitante, float distanciaMaxima, String endereco, Date dataEmprestimo, Date dataDevolucao, String nomeItem, String descricaoItem, Categoria categoria) {
         this.idEmprestimo = idEmprestimo;
-        this.concedente = concedente;
+        this.requisitante = requisitante;
         this.distanciaMaxima = distanciaMaxima;
         this.endereco = endereco;
         this.dataEmprestimo = dataEmprestimo;
@@ -42,16 +42,16 @@ public class Emprestimo {
         this.situacao = 1;
     }
 
-    public void iniciarEmprestimo(String endereco, Usuario requisitante) throws Exception {
-        if(requisitante == null){
-            throw new Exception("Requisitante nao existe!");
+    public void iniciarEmprestimo(String endereco, Usuario concedente) throws Exception {
+        if(concedente == null){
+            throw new Exception("Concedente nao existe!");
         }
         if(this.situacao != 1){
             throw new Exception("Emprestimo nao esta solicitado!");
         }
         //Emprestimo em andamento
         setEndereco(endereco);
-        setRequisitante(requisitante);
+        setConcedente(concedente);
         this.situacao = 2;
     }
 
@@ -67,8 +67,8 @@ public class Emprestimo {
     }
 
     public void cancelarEmprestimo() throws Exception {
-        if(this.situacao == 3){
-            throw new Exception("Emprestimo ja foi concluido!");
+        if(this.situacao == 3 || this.situacao == 4){
+            throw new Exception("Emprestimo ja foi concluido ou cancelado!");
         }
         //Emprestimo cancelado
         this.situacao = 4;
