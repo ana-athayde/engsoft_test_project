@@ -34,8 +34,6 @@ Os stakeholders do projeto podem ser divididos em internos e externos:
 **Stakeholders Externos:**
 - Usuários do Software
 
----
-
 # Testes de Classes e Métodos
 
 Nossa aplicação requer uma série de testes para garantir que as funcionalidades e classes principais estejam funcionando corretamente. Aqui estão os testes que foram definidos:
@@ -104,6 +102,5 @@ Nossa aplicação requer uma série de testes para garantir que as funcionalidad
 
 - **Justificativa:** No método `iniciarLogin()`, se o atributo idUsuario estiver incorreto, cai em uma exceção informando que o id está incorreto.
 
-<!--
 Este README faz parte de um projeto para a disciplina "SOFT003 - Engenharia de Software," com ênfase em testes de software. O objetivo principal deste projeto é demonstrar a compreensão dos conceitos de Engenharia de Software relacionados a testes e documentação de software.
--->
+
